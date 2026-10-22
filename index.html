@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amit Barman</title><link rel="stylesheet" href="style.css"></head>
+<body data-page="index"><div id="hdr"></div>
+<main class="wrap">
+<h1>Hi, I'm Amit Barman</h1>
+<p class="muted">PhD Candidate in Computer Science &amp; Engineering, Jadavpur University</p>
+<p>I work on <strong>Natural Language Processing for the Indian legal domain</strong>: making legal text easier to analyse, search and understand with language models.</p>
+<h2>Links</h2>
+<ul>
+<li><a href="https://github.com/imamit-b">GitHub</a></li>
+<li><a href="https://github.com/imamit-b/Publications">Publications</a></li>
+<li><a href="mailto:amitbarman811@gmail.com">amitbarman811@gmail.com</a></li>
+</ul>
+<h2>Latest writing</h2><div id="latest"></div>
+</main><div id="ftr"></div>
+<script src="common.js"></script>
+<script>fetch('posts/posts.json').then(r=>r.json()).then(ps=>{
+document.getElementById('latest').innerHTML=ps.slice(0,3).map(p=>`<div class="post-item"><h3><a href="post.html?p=${p.slug}">${p.title}</a></h3><div class="muted">${p.date}</div></div>`).join('')+'<p><a href="blog.html">All posts →</a></p>'})</script>
+</body></html>

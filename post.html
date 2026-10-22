@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post · Amit Barman</title><link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script></head>
+<body data-page="blog"><div id="hdr"></div>
+<main class="wrap"><article id="post">Loading…</article><p><a href="blog.html">← All posts</a></p></main><div id="ftr"></div>
+<script src="common.js"></script>
+<script>
+const slug=(new URLSearchParams(location.search).get('p')||'').replace(/[^a-z0-9-]/gi,'');
+Promise.all([fetch('posts/posts.json').then(r=>r.json()),fetch(`posts/${slug}.md`).then(r=>{if(!r.ok)throw 0;return r.text()})])
+.then(([ps,md])=>{const m=ps.find(p=>p.slug===slug)||{};document.title=(m.title||'Post')+' · Amit Barman';
+document.getElementById('post').innerHTML=`<h1>${m.title||''}</h1><div class="muted">${m.date||''}</div>`+marked.parse(md)})
+.catch(()=>document.getElementById('post').textContent='Post not found.');
+</script></body></html>

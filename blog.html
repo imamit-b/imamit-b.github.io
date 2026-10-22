@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog · Amit Barman</title><link rel="stylesheet" href="style.css"></head>
+<body data-page="blog"><div id="hdr"></div>
+<main class="wrap"><h1>Blog</h1><div id="list"></div></main><div id="ftr"></div>
+<script src="common.js"></script>
+<script>fetch('posts/posts.json').then(r=>r.json()).then(ps=>{
+document.getElementById('list').innerHTML=ps.sort((a,b)=>b.date.localeCompare(a.date)).map(p=>`<div class="post-item"><h3><a href="post.html?p=${p.slug}">${p.title}</a></h3><div class="muted">${p.date}</div><p>${p.summary||''}</p></div>`).join('')})</script>
+</body></html>

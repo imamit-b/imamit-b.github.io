@@ -1,0 +1,22 @@
+:root{--bg:#fbfaf8;--fg:#1f2328;--muted:#6b7280;--accent:#2f5d9e;--line:#e5e2dc}
+@media (prefers-color-scheme:dark){:root{--bg:#16181c;--fg:#e6e6e6;--muted:#9aa0a8;--accent:#7aa7e6;--line:#2a2d33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 Georgia,'Times New Roman',serif}
+.wrap{max-width:700px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);padding:20px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.brand{font-weight:bold;font-size:1.1rem;color:var(--fg);text-decoration:none}
+nav a{margin-left:18px;color:var(--muted);text-decoration:none;font:15px system-ui,sans-serif}
+nav a:hover,nav a.on{color:var(--accent)}
+main{padding:40px 0 60px}
+h1{font-size:2rem;line-height:1.25;margin:0 0 .4em}
+h2{margin-top:1.8em}
+a{color:var(--accent)}
+.muted{color:var(--muted);font:14px system-ui,sans-serif}
+.post-item{padding:18px 0;border-bottom:1px solid var(--line)}
+.post-item h3{margin:0}
+.post-item a{text-decoration:none}
+pre{background:var(--line);padding:14px;overflow:auto;border-radius:6px;font-size:14px}
+code{font-size:.92em}
+blockquote{border-left:3px solid var(--line);margin-left:0;padding-left:16px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font:14px system-ui,sans-serif}
